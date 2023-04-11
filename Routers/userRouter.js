@@ -1,16 +1,28 @@
-const {Router} = require('express')
-const app = Router()
+import { Router } from "express"
 
-const root = "/users"
+import bodyParser from "body-parser"
+const userRouter = Router()
 
-app.post(`${root}/register`, (req,res)=> {
+
+
+userRouter.post(`/login`, async (req,res)=> {
+    // login a user
+})
+
+userRouter.post(`/register`, async (req,res)=> {
     // register a user
 })
 
-app.get(`${root}/wallet/:id`, (req,res)=> {
+userRouter.get(`/:id`, async (req,res)=> {
+    // get user's investments
+})
+
+userRouter.get(`/wallet/:id`, async (req,res)=> {
     // get user's wallet
 })
 
-app.patch(`${root}/wallet/:id`, (req,res)=> {
+userRouter.patch(`/wallet/:id`, async (req,res)=> {
     // change user's wallet
 })
+
+export default userRouter
